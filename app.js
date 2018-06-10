@@ -120,6 +120,46 @@ const TYPER = function () {
     return tempArray
   }
   
+  /* NIGHTMODE */
+  
+ ;(function (window, document, undefined) {
+	'use strict';
+	if (!('localStorage' in window)) return;
+	var nightMode = localStorage.getItem('gmtNightMode');
+	if (nightMode) {
+		document.documentElement.className += ' night-mode';
+	}
+})(window, document);
+
+	//nighmode abi saadud järgmisel lingilt: http://jsfiddle.net/cferdinandi/oxu0cqk6/3
+	
+;(function (window, document, undefined) {
+
+	'use strict';
+	if (!('localStorage' in window)) return;
+
+	var nav = document.querySelector('#menu-primary');
+	if (!nav) return;
+
+	//nightmode nupp
+	nav.innerHTML += '<li id="night-mode"><a role="button" href="#">Öörežiim</a></li>';
+
+	var nightMode = document.querySelector('#night-mode');
+	if (!nightMode) return;
+
+	//kui vajutad nightmode nupu peale, on/off
+	nightMode.addEventListener('click', function (event) {
+		event.preventDefault();
+		document.documentElement.classList.toggle('night-mode');
+		if ( document.documentElement.classList.contains('night-mode') ) {
+			localStorage.setItem('gmtNightMode', true);
+			return;
+		}
+		localStorage.removeItem('gmtNightMode');
+	}, false);
+
+})(window, document);
+  
   window.onload = function () {
     const typer = new TYPER()
     window.typer = typer
