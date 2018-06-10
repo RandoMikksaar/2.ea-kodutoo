@@ -1,25 +1,34 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>typer</title>
-    <style> 
-      * {
-        margin: 0;
-        padding: 0;
-      }
-      html, body, canvas {
-        width: 100%;
-        height: 100%;
-      }
-      
-      canvas {
-        position: absolute;
-      }
-    </style>
-    <script src="app.js"></script>
-  </head>
-  <body>
-    <canvas></canvas>
-  </body>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Typer</title> 
+        <link rel="stylesheet" type="text/css" href="style.css"> 
+    </head>
+
+    <body>
+        
+        <table>    
+        <tr>
+            <th colspan="2" id="game-title"><h1>Trükkimise mäng</h1></th>
+        </tr>
+        <tr>
+            <th id="game-rules"><h2>Eesmärk: </h2></td>
+            <td rowspan="5" id="game-button"><h1><a href="game.html" class="button">Alusta Mängu</a></h1></td>
+        </tr>
+        <tr>
+            <td><h3>Trüki ekraanil olev sõna nii kiiresti ja veatult kui suudad!</h3></td>
+        </tr>
+        <tr>
+            <th id="game-info"><h2>Info: </h2></td>
+        </tr>
+        <tr>
+            <td><h3>Iga õigesti trükitud tähe eest saad ühe punkti ja iga valesti trükitud tähe eest kaotad kaks punkti</h3></td>
+        </tr>
+        <tr>
+            <td><h3>Sul on aega 30 Sekundit, et saada oma parim skoor ja jõuda Top 10!</h3></td>
+        </tr>
+        </table>
+        
+    </body>
 </html>

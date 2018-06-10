@@ -1,0 +1,62 @@
+ * {
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    width: 100%;
+    height: 80%;
+    font-family: Georgia, Times, "Times New Roman", serif;
+
+}
+
+.button {
+    border: 2px solid black;
+    border-color: rgb(163, 163, 163);
+    color: black;
+    padding: 20px 20px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none; 
+}
+.button:hover {
+    background-color: rgb(163, 163, 163);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #49274A;
+}
+
+td#game-button, #game-title {
+    text-align: center;
+}
+
+#game-title{
+    background: #94618E; 
+}
+
+td#game-button {
+    width: 50%;
+}
+
+td#game-time {
+    width: 50%;
+    text-align: left;
+}
+
+td#game-score {
+    width: 50%;
+    text-align: right;
+}
+
+
+th#game-rules, #game-info {
+    padding-top: 30px;
+}
