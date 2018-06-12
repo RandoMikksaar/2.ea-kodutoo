@@ -4,16 +4,35 @@
         <meta charset="UTF-8">
         <title>Typer</title> 
         <link rel="stylesheet" type="text/css" href="style.css"> 
+      
     </head>
 
-    <body>
+    <body onload="askName()">
         
+        <script> 
+
+            function askName(){
+                var message;
+                var name = sessionStorage.getItem("name");
+                if (name == null || name == "null"){
+                    name = prompt("Mis su nimi on?");
+                    sessionStorage.setItem("name", name);
+                } else {
+                    message = "Tere, " + name +"!";
+                } 
+                document.getElementById("hello-name").innerHTML = message;
+            } 
+
+           
+
+        </script>
+
         <table>    
         <tr>
             <th colspan="2" id="game-title"><h1>Trükkimise mäng</h1></th>
         </tr>
         <tr>
-            <th id="game-rules"><h2>Eesmärk: </h2></td>
+            <th id="game-rules"> <h2 id="hello-name"></h2><br><h2>Eesmärk: </h2></td>
             <td rowspan="5" id="game-button"><h1><a href="game.html" class="button">Alusta Mängu</a></h1></td>
         </tr>
         <tr>
@@ -29,6 +48,12 @@
             <td><h3>Sul on aega 30 Sekundit, et saada oma parim skoor ja jõuda Top 10!</h3></td>
         </tr>
         </table>
+        <br>
+        <h2>Top 10</h2>
+
+
         
+       
+
     </body>
 </html>
