@@ -4,28 +4,12 @@
         <meta charset="UTF-8">
         <title>Typer</title> 
         <link rel="stylesheet" type="text/css" href="style.css"> 
-      
+        <script src="app.js"></script>
+        <script></script>
     </head>
 
     <body onload="askName()">
-        
-        <script> 
 
-            function askName(){
-                var message;
-                var name = sessionStorage.getItem("name");
-                if (name == null || name == "null"){
-                    name = prompt("Mis su nimi on?");
-                    sessionStorage.setItem("name", name);
-                } else {
-                    message = "Tere, " + name +"!";
-                } 
-                document.getElementById("hello-name").innerHTML = message;
-            } 
-
-           
-
-        </script>
 
         <table>    
         <tr>

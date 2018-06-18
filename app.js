@@ -14,6 +14,8 @@ const TYPER = function () {
     this.word = null
     this.wordMinLength = 5
     this.guessedWords = 0
+
+    this.score = 0
   
     this.init()
   }
@@ -54,9 +56,9 @@ const TYPER = function () {
   
     start: function () {
       this.generateWord()
-      this.word.Draw()
-  
+      this.word.Draw()  
       window.addEventListener('keypress', this.keyPressed.bind(this))
+      
     },
   
     generateWord: function () {
@@ -156,7 +158,39 @@ const TYPER = function () {
 			return;
 		}
 		localStorage.removeItem('gmtNightMode');
-	}, false);
+  }, false);
+  
+  //NAME ASKING - asks name after opening the welcome page and saves to session storage
+  function askName(){
+    var name = sessionStorage.getItem("name");
+    var message = "Tere, " + name +"!";
+    if (name == null || name == "null"){
+        name = prompt("Mis su nimi on?");
+        sessionStorage.setItem("name", name);
+    } else {
+        document.getElementById("hello-name").innerHTML = message;
+    } 
+}
+
+/* TIMER */
+var timeLeft = 30;
+var elem = document.getElementById('some_div');
+var timerId = setInterval(countdown, 1000);
+
+function countdown() {
+    if (timeLeft == -1) {
+        clearTimeout(timerId);
+        showScore();
+    } else {
+        elem.innerHTML = (timeLeft - 1) + ' seconds remaining';
+        timeLeft--;
+        return timeLeft;
+    }
+}
+
+function showScore() {
+    
+}
 
 })(window, document);
   
